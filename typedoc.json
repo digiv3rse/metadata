@@ -1,0 +1,21 @@
+{
+  "$schema": "https://typedoc.org/schema.json",
+  "entryPoints": ["./src/index.ts"],
+  "entryPointStrategy": "resolve",
+  "excludeExternals": true,
+  "excludeInternal": true,
+  "excludeNotDocumented": false,
+  "excludePrivate": true,
+  "excludeProtected": true,
+  "gitRevision": "main",
+  "hideGenerator": true,
+  "name": "DiGiV3rse Protocol Metadata Standards",
+  "out": "docs",
+  "readme": "none",
+  "categoryOrder": ["Compose", "Parse", "Helpers", "Other"],
+  // "sort": ["source-order", "enum-value-ascending"],
+  "plugin": ["typedoc-plugin-zod"],
+  "disableSources": false,
+  "treatWarningsAsErrors": false,
+  "intentionallyNotExported": []
+}
