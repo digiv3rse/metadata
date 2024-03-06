@@ -1,0 +1,5 @@
+dist
+docs
+jsonschemas
+pnpm-lock.yaml
+.changeset
