@@ -64,7 +64,7 @@
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/kimhabork/metadata.git"
+    "url": "git://github.com/digiv3rse/metadata.git"
   },
   "license": "MIT",
   "devDependencies": {
