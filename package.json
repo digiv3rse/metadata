@@ -114,12 +114,12 @@
   },
   "pnpm": {
     "overrides": {
-      "@digiv3rse-protocol/metadata": "file:./",
+      "@digiv3rse/metadata": "file:./",
       "ethers": "^5.7.2"
     },
     "peerDependencyRules": {
       "ignoreMissing": [
-        "@digiv3rse-protocol/metadata",
+        "@digiv3rse/metadata",
         "react"
       ]
     }

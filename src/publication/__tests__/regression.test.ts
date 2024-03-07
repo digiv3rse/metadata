@@ -4,7 +4,7 @@ import {
   production,
   ExplorePublicationsOrderByType,
   LimitType,
-} from '@digiv3rse-protocol/client';
+} from '@digiv3rse/client';
 
 import { formatZodError } from '../../formatters.js';
 import { PublicationMetadataSchema } from '../index.js';
@@ -14,7 +14,7 @@ function toUsableUrl(src: string) {
 
   switch (url.protocol) {
     case 'ipfs:':
-      return `https://gw.ipfs-digiv3rse.xyz/ipfs/${url.hostname}`;
+      return `https://ipfs.io/ipfs/${url.hostname}`;
 
     case 'ar:':
       return `https://arweave.net/${url.hostname}`;

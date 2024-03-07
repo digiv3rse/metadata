@@ -1,4 +1,4 @@
-# @digiv3rse-protocol/metadata
+# @digiv3rse/metadata
 
 ## 1.1.5
 
@@ -102,7 +102,7 @@
 - 5e152b0: **Fixes** tsconfig so to not need tslib
 - a75cf84: **Fixed** `Amount.currencty > Amount.asset`
 - cb7ed1a: **Added** `ProfileMetadata.digi.appId`
-- eec20a1: **Fixed** TS4023 error while using `legacy` namespace by moving content under `@digiv3rse-protocol/metadata/legacy` entry point
+- eec20a1: **Fixed** TS4023 error while using `legacy` namespace by moving content under `@digiv3rse/metadata/legacy` entry point
 - a8e465d: **Added** support for Profile metadata v1
 - b76078c: **fix:** non-optional `locale: Locale`
 - d0cd540: **Fixed** `NftOwnershipCondition` to include ERC-1155 limitations around token IDs
@@ -269,7 +269,7 @@
 
 ### Patch Changes
 
-- eec20a1: **Fixed** TS4023 error while using `legacy` namespace by moving content under `@digiv3rse-protocol/metadata/legacy` entry point
+- eec20a1: **Fixed** TS4023 error while using `legacy` namespace by moving content under `@digiv3rse/metadata/legacy` entry point
 - 691847a: **Fixed** missing `EncryptionParams.encryptedFields` rules and typedef
 - b72c6e4: **Fixed** missing properties in `TransactionMetadata` and `SpaceSchema`
 

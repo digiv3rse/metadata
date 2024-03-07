@@ -40,17 +40,17 @@ Schema validation and TS types for [LIP-2](https://github.com/kimhabork/LIPs/pul
 
 ```bash
 # npm:
-npm install @digiv3rse-protocol/metadata zod
+npm install @digiv3rse/metadata zod
 
 # yarn:
-yarn add @digiv3rse-protocol/metadata zod
+yarn add @digiv3rse/metadata zod
 
 # pnpm:
-pnpm add @digiv3rse-protocol/metadata zod
+pnpm add @digiv3rse/metadata zod
 ```
 
 > [!NOTE]  
-> `zod` is marked as optional peer dependency, so if you all you need is the JSON Schema definitions, you can install `@digiv3rse-protocol/metadata` without `zod`.
+> `zod` is marked as optional peer dependency, so if you all you need is the JSON Schema definitions, you can install `@digiv3rse/metadata` without `zod`.
 
 ## Usage
 
@@ -77,7 +77,7 @@ import {
   threeD,
   transaction,
   video,
-} from '@digiv3rse-protocol/metadata';
+} from '@digiv3rse/metadata';
 
 const json = article({
   content: 'The content of the article',
@@ -90,7 +90,7 @@ const json = article({
 We also provided a set of builder function for specific metadata sub-types (list to be expanded):
 
 ```ts
-import { geoUri } from '@digiv3rse-protocol/metadata';
+import { geoUri } from '@digiv3rse/metadata';
 
 const uri = geoUri({
   lat: 51.5074,
@@ -103,7 +103,7 @@ const uri = geoUri({
 You can create compliant `MirrorMetadata` objects via the following builder function:
 
 ```ts
-import { mirror } from '@digiv3rse-protocol/metadata';
+import { mirror } from '@digiv3rse/metadata';
 
 const json = mirror({
   appId: 'foobar-app',
@@ -118,7 +118,7 @@ const json = mirror({
 You can create compliant `ProfileMetadata` objects via the following builder function:
 
 ```ts
-import { profile } from '@digiv3rse-protocol/metadata';
+import { profile } from '@digiv3rse/metadata';
 
 const json = profile({
   name: 'Bob',
@@ -150,7 +150,7 @@ Publication metadata schema is a union of all _content_ schemas (e.g. `ArticleMe
 Use it to parse the metadata referenced by `contentURI` of `Comment`, `Mirror`, and `Quote` publications.
 
 ```ts
-import { PublicationMetadataSchema } from '@digiv3rse-protocol/metadata';
+import { PublicationMetadataSchema } from '@digiv3rse/metadata';
 
 PublicationMetadataSchema.parse(valid); // => PublicationMetadata
 PublicationMetadataSchema.parse(invalid); // => throws ZodError
@@ -170,7 +170,7 @@ Mirror metadata schema serve the purpose allowing mirrors be associated to a giv
 Use it to parse the metadata referenced by `metadataURI` of `Mirror` publications.
 
 ```ts
-import { MirrorMetadataSchema } from '@digiv3rse-protocol/metadata';
+import { MirrorMetadataSchema } from '@digiv3rse/metadata';
 
 MirrorMetadataSchema.parse(valid); // => MirrorMetadata
 MirrorMetadataSchema.parse(invalid); // => throws ZodError
@@ -186,7 +186,7 @@ MirrorMetadataSchema.safeParse(invalid);
 #### Profile metadata
 
 ```ts
-import { ProfileMetadataSchema } from '@digiv3rse-protocol/metadata';
+import { ProfileMetadataSchema } from '@digiv3rse/metadata';
 
 ProfileMetadataSchema.parse(valid); // => ProfileMetadata
 ProfileMetadataSchema.parse(invalid); // => throws ZodError
@@ -208,7 +208,7 @@ import {
   extractVersion,
   PublicationMetadataSchema,
   ProfileMetadataSchema,
-} from '@digiv3rse-protocol/metadata';
+} from '@digiv3rse/metadata';
 
 const publicationMetadata = PublicationMetadataSchema.parse(valid);
 
@@ -224,7 +224,7 @@ extractVersion(profileMetadata); // => '2.0.0'
 `ZodError` contains all the information needed to inform you about the validation error, but it's not very user friendly. You can use `formatZodError` to get a more readable error message.
 
 ```ts
-import { PublicationMetadataSchema, formatZodError } from '@digiv3rse-protocol/metadata';
+import { PublicationMetadataSchema, formatZodError } from '@digiv3rse/metadata';
 
 const result = PublicationMetadataSchema.safeParse(invalid);
 
@@ -246,7 +246,7 @@ import {
   PublicationMetadata,
   PublicationMetadataSchema,
   PublicationSchemaId,
-} from '@digiv3rse-protocol/metadata';
+} from '@digiv3rse/metadata';
 
 const publicationMetadata = PublicationMetadataSchema.parse(valid);
 
@@ -275,7 +275,7 @@ import {
   AccessCondition,
   ConditionType,
   PublicationMetadataSchema,
-} from '@digiv3rse-protocol/metadata';
+} from '@digiv3rse/metadata';
 
 const publicationMetadata = PublicationMetadataSchema.parse(valid);
 
@@ -300,7 +300,7 @@ switch (publicationMetadata.encryptedWith?.accessCondition.type) {
 #### `MetadataAttribute`
 
 ```ts
-import { MetadataAttribute, MetadataAttributeType } from '@digiv3rse-protocol/metadata';
+import { MetadataAttribute, MetadataAttributeType } from '@digiv3rse/metadata';
 
 switch (attribute.type) {
   case MetadataAttributeType.BOOLEAN:
@@ -384,21 +384,21 @@ import {
   URI,
   AppId,
   Datetime,
-} from '@digiv3rse-protocol/metadata';
+} from '@digiv3rse/metadata';
 ```
 
 ## Legacy metadata formats
 
-The package also exports parsers for legacy metadata formats via the `@digiv3rse-protocol/metadata/legacy` entrypoint.
+The package also exports parsers for legacy metadata formats via the `@digiv3rse/metadata/legacy` entrypoint.
 
 > [!WARNING]
 > DO NOT mix and match legacy and new metadata TS types and enums. Although they share some similarities they are not meant to be interoperable.
-> For example if you are checking `mainContentFocus` of `PublicationMetadataV2` use the `PublicationMainFocus` exported from `@digiv3rse-protocol/metadata/legacy` and NOT the one from the main `@digiv3rse-protocol/metadata` entrypoint.
+> For example if you are checking `mainContentFocus` of `PublicationMetadataV2` use the `PublicationMainFocus` exported from `@digiv3rse/metadata/legacy` and NOT the one from the main `@digiv3rse/metadata` entrypoint.
 
 You can parse legacy Publication Metadata v1 and v2 via:
 
 ```ts
-import { PublicationMetadataSchema } from '@digiv3rse-protocol/metadata/legacy';
+import { PublicationMetadataSchema } from '@digiv3rse/metadata/legacy';
 
 PublicationMetadataSchema.parse(valid); // => PublicationMetadata
 PublicationMetadataSchema.parse(invalid); // => throws ZodError
@@ -430,7 +430,7 @@ import {
   PublicationMetadataSchema,
   PublicationMetadataVersion,
   PublicationMainFocus,
-} from '@digiv3rse-protocol/metadata/legacy';
+} from '@digiv3rse/metadata/legacy';
 
 const publicationMetadata = PublicationMetadataSchema.parse(valid);
 
@@ -458,7 +458,7 @@ switch (publicationMetadata.version) {
 You can also parse legacy Profile Metadata (aka v1) via:
 
 ```ts
-import { ProfileMetadataSchema } from '@digiv3rse-protocol/metadata/legacy';
+import { ProfileMetadataSchema } from '@digiv3rse/metadata/legacy';
 
 ProfileMetadataSchema.parse(valid); // => ProfileMetadata
 ProfileMetadataSchema.parse(invalid); // => throws ZodError
@@ -471,7 +471,7 @@ ProfileMetadataSchema.safeParse(invalid);
 // => { success: false, error: ZodError }
 ```
 
-Similarly to the main entrypoint the `@digiv3rse-protocol/metadata/legacy` entrypoint also exports all the types and enums that you might need to work with the legacy metadata (some examples below).
+Similarly to the main entrypoint the `@digiv3rse/metadata/legacy` entrypoint also exports all the types and enums that you might need to work with the legacy metadata (some examples below).
 
 ```ts
 import {
@@ -519,24 +519,24 @@ import {
   URI,
   AppId,
   Datetime,
-} from '@digiv3rse-protocol/metadata/legacy';
+} from '@digiv3rse/metadata/legacy';
 ```
 
 > [!NOTE]
-> If you find yourself in a position of importing from both `@digiv3rse-protocol/metadata` and `@digiv3rse-protocol/metadata/legacy` entrypoints in the same module. You can you can use ESModule aliasing to avoid conflicts: `import * as legacy from '@digiv3rse-protocol/metadata/legacy'` and then use the legacy types, enums, and parsers under `legacy.*`.
+> If you find yourself in a position of importing from both `@digiv3rse/metadata` and `@digiv3rse/metadata/legacy` entrypoints in the same module. You can you can use ESModule aliasing to avoid conflicts: `import * as legacy from '@digiv3rse/metadata/legacy'` and then use the legacy types, enums, and parsers under `legacy.*`.
 
 ## JSON schemas
 
 Importing JSON schema in TypeScript is a simple as:
 
 ```ts
-import audio from '@digiv3rse-protocol/metadata/jsonschemas/publications/audio/3.0.0.json' assert { type: 'json' };
+import audio from '@digiv3rse/metadata/jsonschemas/publications/audio/3.0.0.json' assert { type: 'json' };
 
-import audio from '@digiv3rse-protocol/metadata/jsonschemas/publications/article/3.0.0.json' assert { type: 'json' };
+import audio from '@digiv3rse/metadata/jsonschemas/publications/article/3.0.0.json' assert { type: 'json' };
 
-import mirror from '@digiv3rse-protocol/metadata/jsonschemas/publications/mirror/1.0.0.json' assert { type: 'json' };
+import mirror from '@digiv3rse/metadata/jsonschemas/publications/mirror/1.0.0.json' assert { type: 'json' };
 
-import profile from '@digiv3rse-protocol/metadata/jsonschemas/profile/2.0.0.json' assert { type: 'json' };
+import profile from '@digiv3rse/metadata/jsonschemas/profile/2.0.0.json' assert { type: 'json' };
 ```
 
 You can the use them in your JSON Schema validator of choice, for example [ajv](https://ajv.js.org/).
@@ -675,7 +675,7 @@ pnpm changeset version
 
 4. Review, commit and push the changes
 5. Create a PR from `release/<version>` to `main`
-6. Once approved, publish with (you need to be logged in to npm authorized to publish under `@digiv3rse-protocol`):
+6. Once approved, publish with (you need to be logged in to npm authorized to publish under `@digiv3rse`):
 
 ```bash
 pnpm changeset publish
