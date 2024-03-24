@@ -14,7 +14,7 @@ function toUsableUrl(src: string) {
 
   switch (url.protocol) {
     case 'ipfs:':
-      return `https://ipfs.io/ipfs/${url.hostname}`;
+      return `https://cloudflare-ipfs.com/ipfs/${url.hostname}`;
 
     case 'ar:':
       return `https://arweave.net/${url.hostname}`;
@@ -72,7 +72,7 @@ describe(`Given the PublicationMetadataSchema`, () => {
       const publications = await fetchLastPublications(client, pages);
 
       await Promise.all(
-        publications.map(async (pub, idx) => {
+        publications.map(async (pub: { metadata: { rawURI: string; }; id: any; }, idx: any) => {
           const url = toUsableUrl(pub.metadata.rawURI);
           const json = await fetchMetadata(url);
 

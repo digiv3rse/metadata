@@ -5,7 +5,7 @@ settings:
   excludeLinksFromLockfile: false
 
 overrides:
-  '@digiv3rse-protocol/metadata': file:./
+  '@digiv3rse/metadata': file:./
   ethers: ^5.7.2
 
 dependencies:
@@ -17,6 +17,9 @@ devDependencies:
   '@changesets/cli':
     specifier: ^2.26.2
     version: 2.26.2
+  '@digiv3rse/client':
+    specifier: https://github.com/digiv3rse/sdk.git
+    version: github.com/digiv3rse/sdk/05a3a8b89bd654ca19dbf19c2ef8952fe9df4702
   '@faker-js/faker':
     specifier: ^8.0.2
     version: 8.0.2
@@ -6041,4 +6044,11 @@ packages:
 
   /zod@3.22.4:
     resolution: {integrity: sha512-iC+8Io04lddc+mVqQ9AZ7OQ2MrUKGN+oIQyq1vemgt46jwCwLfhq7/pwnBnNXXXZb8VTVLKwp9EDkx+ryxIWmg==}
+    dev: true
+
+  github.com/digiv3rse/sdk/05a3a8b89bd654ca19dbf19c2ef8952fe9df4702:
+    resolution: {tarball: https://codeload.github.com/digiv3rse/sdk/tar.gz/05a3a8b89bd654ca19dbf19c2ef8952fe9df4702}
+    name: sdk
+    version: 0.0.0
+    engines: {node: '>=18', pnpm: '>=8'}
     dev: true

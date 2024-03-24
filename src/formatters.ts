@@ -83,7 +83,7 @@ function formatZodIssue(issue: z.ZodIssue): string {
 /**
  * Formats a Zod parsing error into a human-readable string.
  *
- * The formatting is tailored to the DiGiV3rse Protocol Metadata use case. It may not be suitable for other use cases.
+ * The formatting is tailored to the DiGi Protocol Metadata use case. It may not be suitable for other use cases.
  *
  * @category Helpers
  *
