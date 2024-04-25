@@ -72,7 +72,7 @@ describe(`Given the PublicationMetadataSchema`, () => {
       const publications = await fetchLastPublications(client, pages);
 
       await Promise.all(
-        publications.map(async (pub: { metadata: { rawURI: string; }; id: any; }, idx: any) => {
+        publications.map(async (pub: { metadata: { rawURI: string }; id: any }, idx: any) => {
           const url = toUsableUrl(pub.metadata.rawURI);
           const json = await fetchMetadata(url);
 

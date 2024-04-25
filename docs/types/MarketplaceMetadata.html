@@ -15,14 +15,14 @@
 <li><a href="../index.html">DiGiV3rse Protocol Metadata Standards</a></li>
 <li><a href="MarketplaceMetadata.html">MarketplaceMetadata</a></li></ul>
 <h1>Type alias MarketplaceMetadata</h1></div>
-<div class="tsd-signature"><span class="tsd-kind-type-alias">Marketplace<wbr/>Metadata</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span><br/><span>    </span><span class="tsd-kind-property">animation_url</span><span class="tsd-signature-symbol">?: </span><a href="URI.html" class="tsd-signature-type tsd-kind-type-alias">URI</a><span class="tsd-signature-symbol">; </span><br/><span>    </span><span class="tsd-kind-property">attributes</span><span class="tsd-signature-symbol">?: </span><a href="MarketplaceMetadataAttribute.html" class="tsd-signature-type tsd-kind-type-alias">MarketplaceMetadataAttribute</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">; </span><br/><span>    </span><span class="tsd-kind-property">description</span><span class="tsd-signature-symbol">?: </span><a href="Markdown.html" class="tsd-signature-type tsd-kind-type-alias">Markdown</a><span class="tsd-signature-symbol">; </span><br/><span>    </span><span class="tsd-kind-property">external_url</span><span class="tsd-signature-symbol">?: </span><a href="URI.html" class="tsd-signature-type tsd-kind-type-alias">URI</a><span class="tsd-signature-symbol">; </span><br/><span>    </span><span class="tsd-kind-property">image</span><span class="tsd-signature-symbol">?: </span><a href="URI.html" class="tsd-signature-type tsd-kind-type-alias">URI</a><span class="tsd-signature-symbol">; </span><br/><span>    </span><span class="tsd-kind-property">name</span><span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span></div>
+<div class="tsd-signature"><span class="tsd-kind-type-alias">Marketplace<wbr/>Metadata</span><span class="tsd-signature-symbol">:</span> <span class="tsd-signature-symbol">{ </span><br/><span>    </span><span class="tsd-kind-property">animation_url</span><span class="tsd-signature-symbol">?: </span><a href="URI.html" class="tsd-signature-type tsd-kind-type-alias">URI</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">; </span><br/><span>    </span><span class="tsd-kind-property">attributes</span><span class="tsd-signature-symbol">?: </span><a href="MarketplaceMetadataAttribute.html" class="tsd-signature-type tsd-kind-type-alias">MarketplaceMetadataAttribute</a><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">; </span><br/><span>    </span><span class="tsd-kind-property">description</span><span class="tsd-signature-symbol">?: </span><a href="Markdown.html" class="tsd-signature-type tsd-kind-type-alias">Markdown</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">; </span><br/><span>    </span><span class="tsd-kind-property">external_url</span><span class="tsd-signature-symbol">?: </span><a href="URI.html" class="tsd-signature-type tsd-kind-type-alias">URI</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">; </span><br/><span>    </span><span class="tsd-kind-property">image</span><span class="tsd-signature-symbol">?: </span><a href="URI.html" class="tsd-signature-type tsd-kind-type-alias">URI</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span><span class="tsd-signature-symbol">; </span><br/><span>    </span><span class="tsd-kind-property">name</span><span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">; </span><br/><span class="tsd-signature-symbol">}</span></div>
 <div class="tsd-comment tsd-typography"><p>The metadata standard for marketplace(s).</p>
 </div>
 <div class="tsd-type-declaration">
 <h4>Type declaration</h4>
 <ul class="tsd-parameters">
 <li class="tsd-parameter">
-<h5><code class="tsd-tag ts-flagOptional">Optional</code> <span class="tsd-kind-property">animation_<wbr/>url</span><span class="tsd-signature-symbol">?: </span><a href="URI.html" class="tsd-signature-type tsd-kind-type-alias">URI</a></h5>
+<h5><code class="tsd-tag ts-flagOptional">Optional</code> <span class="tsd-kind-property">animation_<wbr/>url</span><span class="tsd-signature-symbol">?: </span><a href="URI.html" class="tsd-signature-type tsd-kind-type-alias">URI</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
 <div class="tsd-comment tsd-typography"><p>A URL to a multi-media attachment for the item. The file extensions GLTF, GLB, WEBM, MP4, M4V, OGV,
 and OGG are supported, along with the audio-only extensions MP3, WAV, and OGA.
 <code>animation_url</code> also supports HTML pages, allowing you to build rich experiences and interactive NFTs using JavaScript canvas,
@@ -37,18 +37,18 @@ WebGL, and more. Scripts and relative paths within the HTML page are now support
 <h4>See</h4><p><a href="https://docs.opensea.io/docs/metadata-standards#attributes">https://docs.opensea.io/docs/metadata-standards#attributes</a></p>
 </div></li>
 <li class="tsd-parameter">
-<h5><code class="tsd-tag ts-flagOptional">Optional</code> <span class="tsd-kind-property">description</span><span class="tsd-signature-symbol">?: </span><a href="Markdown.html" class="tsd-signature-type tsd-kind-type-alias">Markdown</a></h5>
+<h5><code class="tsd-tag ts-flagOptional">Optional</code> <span class="tsd-kind-property">description</span><span class="tsd-signature-symbol">?: </span><a href="Markdown.html" class="tsd-signature-type tsd-kind-type-alias">Markdown</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
 <div class="tsd-comment tsd-typography"><p>A human-readable description of the item. It could be plain text or markdown.</p>
 </div>
 <div class="tsd-comment tsd-typography"></div></li>
 <li class="tsd-parameter">
-<h5><code class="tsd-tag ts-flagOptional">Optional</code> <span class="tsd-kind-property">external_<wbr/>url</span><span class="tsd-signature-symbol">?: </span><a href="URI.html" class="tsd-signature-type tsd-kind-type-alias">URI</a></h5>
+<h5><code class="tsd-tag ts-flagOptional">Optional</code> <span class="tsd-kind-property">external_<wbr/>url</span><span class="tsd-signature-symbol">?: </span><a href="URI.html" class="tsd-signature-type tsd-kind-type-alias">URI</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
 <div class="tsd-comment tsd-typography"><p>This is the URL that will appear below the asset&#39;s image on OpenSea and others etc.
 and will allow users to leave OpenSea and view the item on the site.</p>
 </div>
 <div class="tsd-comment tsd-typography"></div></li>
 <li class="tsd-parameter">
-<h5><code class="tsd-tag ts-flagOptional">Optional</code> <span class="tsd-kind-property">image</span><span class="tsd-signature-symbol">?: </span><a href="URI.html" class="tsd-signature-type tsd-kind-type-alias">URI</a></h5>
+<h5><code class="tsd-tag ts-flagOptional">Optional</code> <span class="tsd-kind-property">image</span><span class="tsd-signature-symbol">?: </span><a href="URI.html" class="tsd-signature-type tsd-kind-type-alias">URI</a><span class="tsd-signature-symbol"> | </span><span class="tsd-signature-type">null</span></h5>
 <div class="tsd-comment tsd-typography"><p>Marketplaces will store any NFT image here.</p>
 </div>
 <div class="tsd-comment tsd-typography"></div></li>
@@ -61,7 +61,7 @@ and will allow users to leave OpenSea and view the item on the site.</p>
 <h4>See</h4><p><a href="https://docs.opensea.io/docs/metadata-standards#metadata-structure">https://docs.opensea.io/docs/metadata-standards#metadata-structure</a></p>
 </div><aside class="tsd-sources">
 <ul>
-<li>Defined in <a href="https://github.com/kimhabork/metadata/blob/main/src/publication/common/marketplace.ts#L47">src/publication/common/marketplace.ts:47</a></li></ul></aside></div>
+<li>Defined in <a href="https://github.com/digiv3rse/metadata/blob/main/src/marketplace.ts#L47">src/marketplace.ts:47</a></li></ul></aside></div>
 <div class="col-sidebar">
 <div class="page-menu">
 <div class="tsd-navigation settings">
